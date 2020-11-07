@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Quiz</title>
+</head>
+
+<style>
+body{
+background: url(back.jpg)no-repeat;
+-moz-background-size: 100%
+-webkit-background-size: 100%
+background-size: 100%
+}
+</style>
+
+<body>
+<form name="quiz" class="quiz" id="quiz" action="javascript:check();">
+<h3> 1.1) What is the capital of Chile? </h3>
+<input name="question1" checked="checked" value="no" id="value1" type="radio"> Chile <br>
+<input name="question1" value="no" id="value2" type="radio"> Santagua <br>
+<input name="question1" value="no" id="value3" type="radio"> Peru <br>
+<input name="question1" value="nо" id="value4" type="radio"> Santiago <br>
+
+<h3> 3) Which country is the origin of the cocktail Mojito? </h3>
+<input name="question2" checked="checked" value="no" id="value1" type="radio"> Brazil <br>
+<input name="question2" value="no" id="value2" type="radio"> Spain <br>
+<input name="question2" value="no" id="value3" type="radio"> Japan <br>
+<input name="question2" value="nо" id="value4" type="radio"> Cube <br>
+
+
+<h3> 6) Where would you find the River Thames? </h3>
+<input name="question3" checked="checked" value="no" id="value1" type="radio"> France <br>
+<input name="question3" value="no" id="value2" type="radio"> Russia <br>
+<input name="question3" value="no" id="value3" type="radio"> Germany <br>
+<input name="question3" value="nо" id="value4" type="radio"> England <br>
+<br>
+<input value="Submit" type="submit">
+</form>
+<center>
+<br><br><br><br><br><br><br><br><br>
+<font color="purple" size="6"><a href=file:///C:/Users/lenovo/Desktop/work1/menu.html>Menu</a></font>
+<center>
+<script>
+ function check()
+ {
+ var yes=0;
+ var no=0;
+ var answer="";
+ var choice;
+ for (var v=1; v<=3; v++)
+ {
+ var q = document.forms['quiz'].elements['question'+v];
+  for (var i=0; i<q.length; i++)
+  {
+  if (q[i].checked) {
+  choice=q[i].value;
+  }
+  }
+  if (choice=="nо") {yes++;}
+  if (choice=="no") {no++;}
+ }
+ switch (true) {
+ case (yes<2): answer="Your result is C";break;
+ case (yes==2): answer="Your result is B";break;
+ case (yes>2): answer="Your result is A";break;
+ }
+ alert(answer);
+ }
+</script>
+
+</body>
+</html>
